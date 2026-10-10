@@ -1,0 +1,27 @@
+# Render Blueprint for Chuck's Daybook.
+# Secrets are marked sync: false, so Render asks for them and never reads them from this file.
+services:
+  - type: web
+    name: chucks-daybook
+    runtime: node
+    plan: free            # free instances sleep when idle; switch to "starter" to keep it awake
+    region: virginia
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: PUBLIC_URL
+        value: https://daybook.dreamachievedsp2025.net
+      - key: CALENDAR_IDS
+        value: primary
+      - key: ACCESS_TOKEN
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_REFRESH_TOKEN
+        sync: false
