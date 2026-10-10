@@ -17,7 +17,7 @@ services:
         value: https://daybook.dreamachievedsp2025.net
       - key: CALENDAR_IDS
         value: primary
-      - key: ACCESS_TOKEN
+      - key: ACCESS_TOKEN 248390f2892345749919cee9083a65395844ebf400be424b98ad83dc5c123f50
         sync: false
       - key: GOOGLE_CLIENT_ID
         sync: false
